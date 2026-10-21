@@ -1,0 +1,1 @@
+window.AUTOWS_AI = { endpoint: "https://autows-ai.itsakifinbox.workers.dev" };
