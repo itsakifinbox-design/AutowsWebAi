@@ -273,6 +273,39 @@ h2.rv:after{background:var(--acc)}
 @media(max-width:860px){.perks{grid-template-columns:1fr}.ab{grid-template-columns:1fr;gap:36px}.feed ul{min-height:0}}
 @media(prefers-reduced-motion:reduce){.feed li{animation:none}}
 
+/* ---- AI chat panel polish ---- */
+#aipanel{width:min(390px,calc(100vw - 32px));border-radius:24px;background:var(--bg2);box-shadow:0 44px 90px -34px rgba(0,0,0,.75),0 0 0 1px color-mix(in srgb,var(--acc) 12%,transparent)}
+.aihd{padding:16px 18px;gap:10px}
+.aihd b{display:flex;align-items:center;gap:10px;font:600 15px Inter,system-ui,sans-serif;letter-spacing:.01em}
+.aihd b:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 20%,transparent)}
+.aihd .ainew{margin-left:auto;margin-right:6px;background:none;border:1px solid var(--line);color:var(--mute);border-radius:999px;padding:5px 11px;font:500 12px Inter,system-ui,sans-serif;cursor:pointer;transition:.2s}
+.aihd .ainew:hover{color:var(--fg);border-color:var(--acc)}
+.aihd #aic{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;transition:.2s}
+.aihd #aic:hover{background:var(--line);color:var(--fg)}
+#acb{height:min(330px,46vh);padding:18px 16px 10px;gap:12px;scroll-behavior:smooth;overscroll-behavior:contain}
+#aipanel .m{max-width:84%;padding:11px 15px;border-radius:18px;font-size:.93rem;line-height:1.5;overflow-wrap:anywhere;margin:0}
+#aipanel .m.a{align-self:flex-start;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-bottom-left-radius:6px}
+#aipanel .m.u{align-self:flex-end;background:var(--acc);color:var(--on-acc);border:0;border-bottom-right-radius:6px}
+#aipanel .m.typing{display:flex;gap:5px;align-items:center;padding:15px 16px}
+#aipanel .m.typing span{width:7px;height:7px;border-radius:50%;background:var(--mute);animation:aity 1s ease-in-out infinite}
+#aipanel .m.typing span:nth-child(2){animation-delay:.15s}#aipanel .m.typing span:nth-child(3){animation-delay:.3s}
+@keyframes aity{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-4px);opacity:1}}
+.aichips{display:flex;flex-wrap:wrap;gap:8px;padding:2px 16px 14px}
+.aichips:empty{display:none}
+.aichips button{border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:999px;padding:8px 13px;font:500 .8rem Inter,system-ui,sans-serif;cursor:pointer;transition:.2s;text-align:left}
+.aichips button:hover{border-color:var(--acc);color:var(--acc)}
+#aipanel .cin{display:flex;align-items:stretch;gap:8px;margin:0;padding:12px 14px;border-top:1px solid var(--line);background:var(--bg2)}
+#aipanel .cin input{flex:1;min-width:0;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:14px;padding:13px 15px;font-size:.95rem;transition:.2s}
+#aipanel .cin input:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 18%,transparent)}
+#aipanel .cin button{border:0;border-radius:14px;padding:0 20px;background:var(--acc);color:var(--on-acc);font-weight:600;cursor:pointer;transition:filter .2s}
+#aipanel .cin button:hover{filter:brightness(1.08)}
+.ainote{margin:0;padding:0 18px 14px;font-size:.66rem;line-height:1.5;color:var(--mute);background:var(--bg2)}
+.aihint{position:fixed;right:16px;bottom:calc(166px + env(safe-area-inset-bottom,0px));z-index:89;max-width:240px;background:var(--bg2);color:var(--fg);border:1px solid var(--line);border-radius:16px;border-bottom-right-radius:5px;padding:12px 38px 12px 14px;font-size:.88rem;line-height:1.4;box-shadow:0 20px 40px -20px rgba(0,0,0,.6);cursor:pointer;animation:feedIn .5s ease both}
+.aihint button{position:absolute;top:6px;right:6px;width:24px;height:24px;border:0;background:none;color:var(--mute);cursor:pointer;border-radius:50%}
+.aihint button:hover{background:var(--line);color:var(--fg)}
+@media(max-width:600px){#aipanel{left:16px;right:16px;width:auto}#acb{height:min(300px,42vh)}}
+.bot3d:focus-visible{outline:2px solid var(--acc);outline-offset:6px;border-radius:28px}
+
 /* try page */
 main>section:first-child:not(.hero){padding-top:calc(60px + 8vh)}
 .tb{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:24px;margin-top:32px;align-items:start}
