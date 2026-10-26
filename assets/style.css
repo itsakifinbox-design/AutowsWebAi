@@ -282,7 +282,7 @@ h2.rv:after{background:var(--acc)}
 .aihd .ainew:hover{color:var(--fg);border-color:var(--acc)}
 .aihd #aic{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;transition:.2s}
 .aihd #aic:hover{background:var(--line);color:var(--fg)}
-#acb{height:min(330px,46vh);padding:18px 16px 10px;gap:12px;scroll-behavior:smooth;overscroll-behavior:contain}
+#acb{flex:1 1 330px;height:auto;min-height:96px;padding:18px 16px 10px;gap:12px;scroll-behavior:smooth;overscroll-behavior:contain}
 #aipanel .m{max-width:84%;padding:11px 15px;border-radius:18px;font-size:.93rem;line-height:1.5;overflow-wrap:anywhere;margin:0}
 #aipanel .m.a{align-self:flex-start;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-bottom-left-radius:6px}
 #aipanel .m.u{align-self:flex-end;background:var(--acc);color:var(--on-acc);border:0;border-bottom-right-radius:6px}
@@ -303,8 +303,13 @@ h2.rv:after{background:var(--acc)}
 .aihint{position:fixed;right:16px;bottom:calc(166px + env(safe-area-inset-bottom,0px));z-index:89;max-width:240px;background:var(--bg2);color:var(--fg);border:1px solid var(--line);border-radius:16px;border-bottom-right-radius:5px;padding:12px 38px 12px 14px;font-size:.88rem;line-height:1.4;box-shadow:0 20px 40px -20px rgba(0,0,0,.6);cursor:pointer;animation:feedIn .5s ease both}
 .aihint button{position:absolute;top:6px;right:6px;width:24px;height:24px;border:0;background:none;color:var(--mute);cursor:pointer;border-radius:50%}
 .aihint button:hover{background:var(--line);color:var(--fg)}
-@media(max-width:600px){#aipanel{left:16px;right:16px;width:auto}#acb{height:min(300px,42vh)}}
+@media(max-width:600px){#aipanel{left:16px;right:16px;width:auto}#acb{flex-basis:300px}}
 .bot3d:focus-visible{outline:2px solid var(--acc);outline-offset:6px;border-radius:28px}
+
+/* keep the whole panel on screen at any height */
+#aipanel{display:flex;flex-direction:column;max-height:calc(100vh - 248px);max-height:calc(100dvh - 248px)}
+#aipanel .aihd,#aipanel .aichips,#aipanel .cin,#aipanel .ainote{flex:none}
+@media(max-height:740px){.aichips{display:none}}
 
 /* try page */
 main>section:first-child:not(.hero){padding-top:calc(60px + 8vh)}
