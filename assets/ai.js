@@ -40,7 +40,7 @@ function send(t){
 form.onsubmit=function(e){e.preventDefault();var t=inp.value;inp.value='';send(t)};
 inp.maxLength=400;
 if(hd){var nc=document.createElement('button');nc.type='button';nc.className='ainew';nc.textContent='New chat';nc.onclick=function(){hist=[];save();busy=false;render()};hd.insertBefore(nc,closeBtn||null)}
-var note=document.createElement('p');note.className='ainote';note.textContent='AI replies can be wrong. Please do not share sensitive information.';form.insertAdjacentElement('afterend',note);
+var note=document.createElement('p');note.className='ainote';note.appendChild(document.createTextNode('AI replies can be wrong. Please do not share sensitive information. '));var wa=document.createElement('a');wa.href='https://wa.me/8801332611967';wa.target='_blank';wa.rel='noopener';wa.textContent='Prefer a person? WhatsApp us';note.appendChild(wa);form.insertAdjacentElement('afterend',note);
 render();
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panel&&panel.classList.contains('open')&&closeBtn)closeBtn.click()});
 /* ---- friendly one-time nudge ---- */

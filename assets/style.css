@@ -273,6 +273,23 @@ h2.rv:after{background:var(--acc)}
 @media(max-width:860px){.perks{grid-template-columns:1fr}.ab{grid-template-columns:1fr;gap:36px}.feed ul{min-height:0}}
 @media(prefers-reduced-motion:reduce){.feed li{animation:none}}
 
+/* home: services preview + steps */
+.svcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:44px}
+.svcs a{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--bg2);border-radius:20px;padding:28px;text-decoration:none;color:var(--fg);transition:transform .3s,border-color .3s,box-shadow .3s}
+.svcs a:hover{transform:translateY(-4px);border-color:var(--acc);box-shadow:0 24px 50px -34px color-mix(in srgb,var(--acc) 40%,transparent)}
+.svcs svg{width:32px;height:32px;color:var(--acc);margin-bottom:20px}
+.svcs h3{font:1.6rem 'Instrument Serif',serif;margin:0 0 8px}
+.svcs p{color:var(--mute);margin:0 0 18px;flex:1}
+.svcs .more{font:500 .72rem ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.steps4{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--bg2)}
+.steps4 li{padding:30px;border-right:1px solid var(--line);position:relative}
+.steps4 li:last-child{border-right:0}
+.steps4 b{display:block;font:400 3.4rem/1 'Instrument Serif',serif;color:var(--acc);margin-bottom:18px}
+.steps4 h3{font:1.6rem 'Instrument Serif',serif;margin:0 0 8px}
+.steps4 p{color:var(--mute);margin:0}
+@media(max-width:980px){.svcs{grid-template-columns:repeat(2,minmax(0,1fr))}.steps4{grid-template-columns:repeat(2,minmax(0,1fr))}.steps4 li:nth-child(2){border-right:0}.steps4 li:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:600px){.svcs{grid-template-columns:1fr}.steps4{grid-template-columns:1fr}.steps4 li{border-right:0;border-bottom:1px solid var(--line)}.steps4 li:last-child{border-bottom:0}}
+
 /* ---- AI chat panel polish ---- */
 #aipanel{width:min(390px,calc(100vw - 32px));border-radius:24px;background:var(--bg2);box-shadow:0 44px 90px -34px rgba(0,0,0,.75),0 0 0 1px color-mix(in srgb,var(--acc) 12%,transparent)}
 .aihd{padding:16px 18px;gap:10px}
@@ -310,6 +327,8 @@ h2.rv:after{background:var(--acc)}
 #aipanel{display:flex;flex-direction:column;max-height:calc(100vh - 248px);max-height:calc(100dvh - 248px)}
 #aipanel .aihd,#aipanel .aichips,#aipanel .cin,#aipanel .ainote{flex:none}
 @media(max-height:740px){.aichips{display:none}}
+
+.ainote a{color:var(--acc);text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 
 /* try page */
 main>section:first-child:not(.hero){padding-top:calc(60px + 8vh)}
